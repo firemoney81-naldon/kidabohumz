@@ -1,23 +1,304 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
+
+  <!-- Schema.org Service 마크업(JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "임산부보험 비교 및 추천 서비스",
+    "name": "2026년 임산부보험 완벽 가이드",
+    "description": "임산부보험과 태아보험의 차이점을 분석하고, 2026년 최신 보험 상품의 보장 내용과 비용을 비교하여 고객 맞춤형 추천 서비스를 제공합니다.",
+    "url": "https://도메인/imsinbu-insurance",
+    "provider": {
+      "@type": "Organization",
+      "name": "보험 정보 센터",
+      "logo": "https://도메인/logo.png"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "KR"
+    },
+    "priceRange": "₩₩₩",
+    "keywords": ["임산부보험", "태아보험", "출산보험", "임산부보험 비교", "보험 추천", "가성비 보험"]
+  }
+  </script>
+
+  <!-- Google Fonts: Noto Sans KR -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- CSS Style: 부드럽고 다채로운 색상 + 계층 잘 보이도록 개선 -->
+  <style>
+    body { font-family: 'Noto Sans KR', sans-serif; margin:0; padding:0; background-color:#f8fafc; color:#333; line-height:1.7; }
+    header { background-color:#e0f7fa; padding:40px 20px; text-align:center; border-bottom: 5px solid #00acc1; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+    main { max-width:900px; margin:20px auto; padding:20px; background-color:#ffffff; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,0.08); }
+    section { margin-bottom:40px; }
+    h1, h2, h3 { color:#006064; line-height:1.4; }
+    h1 { font-size:2.8rem; font-weight:700; color:#004d40; margin-bottom:10px; }
+    h2 { font-size:2rem; font-weight:700; padding-bottom:10px; border-bottom:3px solid #b2ebf2; margin-bottom:20px; color:#006064; }
+    h3 { font-size:1.5rem; color:#00838f; margin-top:25px; margin-bottom:15px; border-left:4px solid #00acc1; padding-left:10px; }
+    p, li, dl, dt, dd { font-size:1.05rem; line-height:1.8; color:#4a4a4a; }
+    ul, ol { padding-left:25px; margin-top:10px; }
+    li { margin-bottom:8px; }
+    table { width:100%; border-collapse: collapse; margin:20px 0; font-size:1rem; }
+    th, td { border:1px solid #e0e0e0; padding:15px; text-align:left; vertical-align:top; }
+    th { background-color:#e0f7fa; color:#004d40; font-weight:700; }
+    .highlight { background-color:#fffde7; padding:10px; border-radius:8px; border-left:5px solid #ffd700; margin-bottom:20px; }
+    .btn-cta {
+      display:inline-block;
+      padding:16px 35px;
+      background-color:#4caf50;
+      color:#fff;
+      font-weight:700;
+      border:none;
+      border-radius:30px;
+      box-shadow:0 6px 12px rgba(76, 175, 80, 0.4);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      cursor:pointer;
+      text-decoration:none;
+      text-align:center;
+      font-size:1.1rem;
+    }
+    .btn-cta:hover { background-color:#388e3c; transform:translateY(-2px); box-shadow:0 8px 16px rgba(76, 175, 80, 0.5); }
+    .form-section { background-color: #f1f8e9; padding:30px; border-radius:12px; margin-top:30px; border:1px dashed #c8e6c9; }
+    label { font-weight:500; display:block; margin-bottom:5px; color:#004d40; }
+    input[type="text"], input[type="tel"], select, textarea {
+      width:100%; padding:10px; margin-bottom:15px; border:1px solid #b2dfdb; border-radius:8px; box-sizing:border-box; font-size:1rem;
+    }
+    footer { text-align:center; padding:20px; background-color:#f0f4f8; border-top:1px solid #e0e0e0; color:#666; font-size:0.9rem; margin-top:20px; }
+
+    /* 반응형 디자인 */
+    @media(max-width:768px) {
+      header { padding:30px 15px; }
+      h1 { font-size:2.2rem; }
+      h2 { font-size:1.7rem; }
+      main { margin:10px; padding:15px; }
+      th, td { padding:10px; font-size:0.9rem; }
+      .btn-cta { width:100%; padding:14px 0; font-size:1rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>임산부보험 완벽 가이드</h1>
+    <p>2026년 최신 정보: 임신 기간 중 위험 보장 및 태아보험 비교 분석</p>
+    <a class="btn-cta" href="#contact">맞춤 견적 1:1 상담 신청하기</a>
+  </header>
+
+  <main>
+    <nav aria-label="페이지 내 이동">
+      <ul style="list-style-type:none; padding:0; display:flex; flex-wrap:wrap; justify-content:space-between; margin-bottom:30px;">
+        <li style="margin:5px;"><a href="#intro" style="color:#00838f;">임산부보험이란?</a></li>
+        <li style="margin:5px;"><a href="#comparison" style="color:#00838f;">보장 내용 비교</a></li>
+        <li style="margin:5px;"><a href="#pricing" style="color:#00838f;">평균 비용 분석</a></li>
+        <li style="margin:5px;"><a href="#checklist" style="color:#00838f;">가입 체크리스트</a></li>
+        <li style="margin:5px;"><a href="#faq" style="color:#00838f;">FAQ</a></li>
+        <li style="margin:5px;"><a href="#contact" style="color:#00838f;">상담 신청</a></li>
+      </ul>
     </nav>
-    <main>
-      <h1>Home page</h1>
-    </main>
-  </body>
-</html>
+
+    <section id="intro">
+      <span id="intro-anchor" class="anchor"></span>
+      <h2>임산부보험의 정의와 중요성</h2>
+      <p>임산부보험은 임신과 출산 과정에서 발생할 수 있는 산모의 건강 문제(합병증 등)를 보장하는 상품입니다. 최근 출산율 감소에도 불구하고 고령 임신이 증가하면서 임산부보험 가입 수요가 늘고 있습니다. 특히 2026년 기준, 35세 이상 고령 임산부의 경우 임신성 당뇨나 고혈압과 같은 합병증 위험이 높아지므로, 임산부보험을 통해 경제적 부담을 줄이는 것이 중요해졌습니다. 임산부보험은 단순히 태아의 선천성 질환만을 보장하는 태아보험과는 다소 차이가 있습니다.</p>
+
+      <h3>임산부보험 VS 태아보험: 정확한 차이점</h3>
+      <p>많은 분들이 임산부보험과 태아보험을 혼동합니다. 임산부보험은 '산모' 본인의 건강을 위한 보장이며, 태아보험은 출생 후 '태아'가 겪을 수 있는 질병이나 상해를 보장합니다. 최근에는 이 두 가지 기능을 통합하여 산모 특약을 추가한 '태아보험' 상품이 주류를 이루고 있습니다. 임산부보험만 단독으로 가입하는 경우는 드물며, 대부분 태아보험 가입 시 산모 관련 특약을 추가하는 방식으로 진행됩니다. 따라서 <strong>임산부보험을 찾는다는 것은 곧 태아보험 상품의 산모 특약을 알아본다</strong>는 의미로 이해할 수 있습니다.</p>
+
+      <h3>임산부보험 가입 시기: 골든 타임은?</h3>
+      <p>임산부보험(태아보험 산모 특약 포함)은 임신 후 즉시 가입하는 것이 가장 유리합니다. 일반적으로 22주 차까지만 가입이 가능하며, 1차 기형아 검사(12주차) 이후부터는 가입 조건이 까다로워질 수 있습니다. 임신 초기에는 병원 검사 결과에 따라 가입이 거절될 가능성이 낮지만, 주차가 늘어날수록 태아의 건강 상태나 산모의 합병증 발생 여부에 따라 가입이 제한되거나 보장 내용이 축소될 수 있습니다.</p>
+      <div class="highlight">
+        <p><strong>핵심 요약:</strong></p>
+        <ul>
+          <li><strong>임산부보험 정의:</strong> 산모의 임신 및 출산 합병증 보장.</li>
+          <li><strong>태아보험과의 관계:</strong> 태아보험의 산모 특약으로 통합되는 경우가 많음.</li>
+          <li><strong>가입 골든 타임:</strong> 임신 초기 (22주 이내, 1차 검사 전 권장).</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="comparison">
+      <span id="comparison-anchor" class="anchor"></span>
+      <h2>임산부보험 보장 내용 비교 및 장단점 분석</h2>
+      <p>임산부보험의 보장 내용은 크게 산모 특약과 태아 특약으로 구분됩니다. 산모 특약은 임신 중 발생하는 질병을 대비하며, 태아 특약은 출생 이후 아이를 보장합니다. 가입 전 반드시 보장 내용을 꼼꼼히 체크하여 나에게 필요한 특약만 선택하는 것이 중요합니다. 특히 <strong>임산부보험 장단점</strong>을 파악하여 불필요한 비용 낭비를 막아야 합니다.</p>
+
+      <h3>산모 특약 주요 보장 항목: 산모를 위한 안전망</h3>
+      <p>산모 특약은 임신 기간 중 발생 가능한 합병증에 대비합니다. 다음은 2026년 기준 주요 보험사들이 제공하는 핵심 보장 내용입니다.</p>
+      <ul>
+        <li><strong>임신/출산 질환 입원/수술비:</strong> 임신성 당뇨, 임신중독증(전자간증) 등 임신 관련 질환으로 인한 입원 및 수술 비용 보장.</li>
+        <li><strong>유산/조산 진단비:</strong> 특정 주수 이후 유산 또는 조산 시 진단금 지급.</li>
+        <li><strong>특정 질병 진단비:</strong> 양수색전증, 태반조기박리 등 중증 합병증 진단비.</li>
+        <li><strong>제왕절개 수술비:</strong> 제왕절개 시 수술비용 보장 특약. (가입 시기 제한 있음)</li>
+      </ul>
+
+      <h3>태아 특약 핵심 보장 항목: 아이의 미래를 위해</h3>
+      <p>태아 특약은 태아보험의 핵심입니다. 아이가 태어난 직후 발생할 수 있는 선천성 질환부터 성장기 질병까지 폭넓게 보장합니다. 이 보장은 임산부보험을 가입하는 가장 큰 이유이기도 합니다.</p>
+      <dl>
+        <dt><strong>선천성 질환 진단비:</strong></dt>
+        <dd>아이가 태어날 때부터 가지고 있는 선천성 기형(심장, 구개열 등)에 대한 보장입니다. 임산부보험 가입 시기가 늦어지면 이 특약 가입이 어려울 수 있습니다.</dd>
+        <dt><strong>저체중아 인큐베이터 입원비:</strong></dt>
+        <dd>조산으로 인해 아이가 저체중(보통 2.5kg 미만)으로 태어날 경우 인큐베이터 사용 비용을 보장합니다. 고령 임신이 늘어나면서 중요성이 커지고 있습니다.</dd>
+        <dt><strong>출생 전후기 질환:</strong></dt>
+        <dd>신생아 호흡곤란 증후군 등 출산 직후 발생할 수 있는 질환에 대한 보장입니다.</dd>
+      </dl>
+
+      <h3>임산부보험 장단점: 신중한 선택을 위한 가이드</h3>
+      <p><strong>임산부보험 장단점</strong>을 명확히 이해해야 나에게 맞는 상품을 선택할 수 있습니다. <strong>임산부보험 비교</strong>를 통해 가성비 좋은 상품을 찾아보세요.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>장점 (Pros)</th>
+            <th>단점 (Cons)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>임신 중 산모 합병증으로 인한 경제적 부담 경감</td>
+            <td>가입 시기가 제한적이며, 임신 중 병력 발생 시 가입 불가</td>
+          </tr>
+          <tr>
+            <td>출산 후 태아의 선천성 질환 및 인큐베이터 비용 보장 (태아보험 연계)</td>
+            <td>일부 보장은 비갱신형이 아닌 갱신형으로 운영될 수 있음</td>
+          </tr>
+          <tr>
+            <td>미래의 아이에게 종합 어린이보험 가입이 용이해짐</td>
+            <td>산모 특약의 경우 가입 주수가 지날수록 보험료가 상승하거나 보장 내용 축소</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- 추가 정보성 텍스트 1: 고령 임신과 임산부보험 -->
+      <p>고령 임신은 임신성 당뇨, 임신중독증, 조산 등 여러 위험 요소를 동반합니다. 2026년 통계청 자료에 따르면 고령 산모 비율이 지속적으로 증가하고 있습니다. 이에 따라 보험사들은 고령 산모를 위한 특약을 강화하는 추세입니다. 하지만 가입 전에는 반드시 의사의 소견서나 진료 기록을 확인하여, 기존 질환으로 인한 보장 제외 항목이 있는지 확인해야 합니다.</p>
+
+    </section>
+
+    <section id="pricing">
+      <span id="pricing-anchor" class="anchor"></span>
+      <h2>임산부보험 평균 비용 및 저렴한 곳 찾는 방법</h2>
+      <p>임산부보험 <strong>평균 비용</strong>은 가입자의 연령, 임신 주수, 선택한 보장 내용, 보험사의 손해율 등에 따라 크게 달라집니다. <strong>임산부보험 가격</strong>은 보통 3만 원대부터 시작하지만, 10만 원이 넘는 고가 상품도 있습니다. <strong>저렴한 곳</strong>을 찾는다고 해서 무조건 보장이 부실한 것은 아니므로, 꼼꼼한 비교가 필요합니다.</p>
+
+      <h3>임산부보험 비용에 영향을 미치는 주요 요소</h3>
+      <ul>
+        <li><strong>가입 시기:</strong> 임신 초기(12주차 이전)에 가입하면 보험료가 저렴하며, 보장 범위가 넓습니다. 주수가 늘어날수록 위험률 증가로 보험료가 비싸집니다.</li>
+        <li><strong>태아보험 만기 설정:</strong> 30세 만기(단기)와 100세 만기(장기) 선택에 따라 보험료 차이가 큽니다. 30세 만기 상품이 <strong>임산부보험 싼곳</strong>을 찾는 분들에게 유리합니다.</li>
+        <li><strong>특약 선택:</strong> 불필요한 특약을 제외하고 핵심 보장(선천성 질환, 입원 일당) 위주로 구성하면 보험료를 절감할 수 있습니다.</li>
+        <li><strong>보험사 선택:</strong> 보험사마다 위험률 책정이 다르므로, 여러 회사를 비교해보는 것이 중요합니다.</li>
+      </ul>
+
+      <h3>2026년 임산부보험 예상 비용 테이블 (예시)</h3>
+      <p>다음은 30세 산모 기준, 태아보험에 산모 특약을 추가했을 때의 <strong>임산부보험 예상 금액</strong> 예시입니다. 실제 비용은 개인의 건강 상태에 따라 다를 수 있습니다.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>구분</th>
+            <th>30세 만기 (가성비형)</th>
+            <th>100세 만기 (종합형)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>산모 특약</td>
+            <td>1만원 ~ 2만원</td>
+            <td>1만원 ~ 2만원</td>
+          </tr>
+          <tr>
+            <td>태아/어린이 특약</td>
+            <td>2만원 ~ 4만원</td>
+            <td>4만원 ~ 8만원</td>
+          </tr>
+          <tr>
+            <td><strong>월 보험료 합계</strong></td>
+            <td><strong>3만원 ~ 6만원대</strong></td>
+            <td><strong>5만원 ~ 10만원대</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- 추가 정보성 텍스트 2: 비갱신형 vs 갱신형 -->
+      <p>임산부보험은 갱신형과 비갱신형 중 선택할 수 있습니다. 비갱신형은 초기 보험료가 높지만 만기까지 보험료가 오르지 않아 장기적으로 유리합니다. 반면 갱신형은 초기 보험료가 저렴하지만 일정 기간마다 보험료가 상승할 수 있습니다. <strong>임산부보험 내돈내산 후기</strong>를 보면 비갱신형을 선호하는 경우가 많지만, 예산에 맞춰 갱신형을 선택하는 것도 현명한 방법입니다.</p>
+
+    </section>
+
+    <section id="checklist">
+      <span id="checklist-anchor" class="anchor"></span>
+      <h2>임산부보험 가입 시 필수 체크리스트 (2026년 버전)</h2>
+      <ol>
+        <li><strong>가입 시기 확인:</strong> 임신 22주 이전 가입을 목표로 합니다. 늦어도 25주 이전에는 완료해야 합니다. 1차 기형아 검사 전후로 가입을 결정하는 것이 좋습니다.</li>
+        <li><strong>산모 특약 보장 범위:</strong> 2026년 최신 상품 기준으로 임신성 당뇨, 임신중독증, 특정 유산/조산 보장이 포함되는지 확인합니다. 특히 고령 임신이라면 합병증 특약 보장이 중요합니다.</li>
+        <li><strong>태아 특약 필수 항목:</strong> 선천성 질환(심장, 구개열), 저체중아 인큐베이터 비용, 출생 전후기 질환 등 핵심 특약을 반드시 확인합니다.</li>
+        <li><strong>만기 설정 및 보험료:</strong> 30세 만기 또는 100세 만기 중 선택합니다. <strong>임산부보험 가입</strong> 시 30세 만기를 선택하면 보험료가 저렴하고, 100세 만기는 길게 보장받을 수 있습니다.</li>
+        <li><strong>고지 의무 준수:</strong> 가입 전 반드시 산모의 병력, 복용 중인 약, 최근 검사 결과 등을 사실대로 고지해야 합니다. 고지 의무 위반 시 추후 보험금 지급이 거절될 수 있습니다.</li>
+        <li><strong>다이렉트 vs 설계사:</strong> <strong>임산부보험 다이렉트</strong> 가입은 저렴할 수 있으나, 복잡한 보장 내용을 전문가(<strong>임산부보험 설계사 추천</strong>)와 상담하여 가입하는 것이 더 안전할 수 있습니다.</li>
+      </ol>
+      <a class="btn-cta" href="#contact" style="margin-top:20px;">전문가와 1:1 맞춤 상담하기</a>
+    </section>
+
+    <section id="faq">
+      <span id="faq-anchor" class="anchor"></span>
+      <h2>자주 묻는 질문 (FAQ)</h2>
+      <dl>
+        <dt>Q1: 임신 중 병원에 다녀왔거나 약을 복용해도 임산부보험 가입이 가능한가요?</dt>
+        <dd>A: 네, 가능합니다. 하지만 고지 의무 대상이므로 반드시 보험사에 고지해야 합니다. 가입 심사 과정에서 심사 결과에 따라 가입이 거절되거나 특정 질병에 대한 보장이 제외될 수 있습니다. 병력에 따라 할증이 붙을 수도 있습니다.</dd>
+        <dt>Q2: 임신 초기(12주) 이후에 가입하면 불이익이 있나요?</dt>
+        <dd>A: 가입 시기에 따라 보장 내용이 달라질 수 있습니다. 특히 1차 기형아 검사(NT 검사) 후에는 검사 결과에 따라 가입이 까다로워질 수 있습니다. 임신 22주 이후에는 선천성 질환 보장 등 일부 특약 가입이 불가능해집니다.</dd>
+        <dt>Q3: 임산부보험 가입 시 <strong>임산부보험 순위</strong>가 중요한가요?</dt>
+        <dd>A: 순위보다는 '나에게 맞는 보장'이 중요합니다. 보험사별로 보장 항목과 보험료가 다르므로, 여러 회사를 비교하여 가성비 좋은 상품을 선택하는 것이 최선입니다. <strong>임산부보험 추천</strong> 순위는 참고만 하시고, 개인별 맞춤 설계를 받는 것이 좋습니다.</dd>
+        <dt>Q4: 임산부보험을 가입했는데 태아가 사산된 경우 보험료는 어떻게 되나요?</dt>
+        <dd>A: 태아 특약 보험료는 납입이 중지되거나 환불됩니다. 하지만 산모 특약은 산모의 건강을 보장하는 것이므로 일정 기간 동안 계속 유지되거나 환불될 수 있습니다. 자세한 내용은 약관을 확인해야 합니다.</dd>
+      </dl>
+    </section>
+
+    <!-- 외부 신뢰성 링크 섹션 -->
+    <section>
+      <span id="external-links-anchor" class="anchor"></span>
+      <h2>공신력 있는 외부 정보 참고</h2>
+      <p>임산부보험 관련 정보를 확인하실 때, 다음 외부 기관의 자료를 참고하면 도움이 됩니다.</p>
+      <ul>
+        <li><a href="https://www.e-namu.wiki/임산부보험" target="_blank">나무위키: 임산부보험 (Namuwiki)</a></li>
+        <li><a href="https://www.fss.or.kr/" target="_blank">금융감독원 (FSS)</a></li>
+        <li><a href="https://www.kihf.or.kr/" target="_blank">한국건강증진개발원 (KIPH)</a></li>
+        <li><a href="https://www.mohw.go.kr/" target="_blank">보건복지부 (Ministry of Health and Welfare)</a></li>
+        <li><a href="https://www.kostat.go.kr/" target="_blank">통계청 (Statistics Korea)</a></li>
+      </ul>
+    </section>
+
+    <section id="contact" class="form-section">
+      <span id="contact-anchor" class="anchor"></span>
+      <h2>맞춤 견적 1:1 상담 신청</h2>
+      <p>전문 설계사와 상담하여 2026년 최신 임산부보험 상품별 <strong>장단점</strong>, <strong>차이점</strong>을 비교하고, 나에게 딱 맞는 <strong>가성비 좋은 저렴한 곳</strong>을 찾아보세요.</p>
+      <form action="/submit" method="POST" style="max-width:600px; margin:auto;">
+        <label for="name">이름<span style="color:red;">*</span></label><br />
+        <input type="text" id="name" name="name" required placeholder="예: 홍길동" />
+
+        <label for="phone">연락처<span style="color:red;">*</span></label><br />
+        <input type="tel" id="phone" name="phone" required placeholder="010-1234-5678" pattern="[0-9\-]+" />
+
+        <label for="birth-year">출산 예정일<span style="color:red;">*</span></label><br />
+        <input type="text" id="birth-year" name="birth_year" required placeholder="예: 2026년 12월 25일" />
+
+        <label for="pregnancy-week">임신 주수 (현재)<span style="color:red;">*</span></label><br />
+        <input type="number" id="pregnancy-week" name="pregnancy_week" required placeholder="예: 15주" min="1" max="40" />
+
+        <label for="move-type">상담 희망 유형<span style="color:red;">*</span></label><br />
+        <select id="move-type" name="move_type" required>
+          <option value="">선택하세요</option>
+          <option value="임산부보험 단독 가입">산모 특약 단독 가입</option>
+          <option value="태아보험+산모특약">태아보험 + 산모 특약 동시 가입</option>
+          <option value="태아보험만 가입">태아보험만 가입 희망</option>
+        </select>
+
+        <label for="address">기타 문의사항 (병력, 궁금증 등)</label><br />
+        <textarea id="address" name="address" rows="4" placeholder="예: 고령 임신이라 합병증 보장이 걱정돼요. 비갱신형으로 추천받고 싶습니다."></textarea>
+
+        <button type="submit" class="btn-cta">견적 문의 보내기</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 임산부보험 완벽 가이드. 본 사이트는 보험 상품 판매가 아닌 정보 제공을 목적으로 합니다. 모든 상품은 계약 체결 전 상품 설명서 및 약관을 반드시 확인하시기 바랍니다.</p>
+    <p>면책 고지: 본 페이지에 명시된 모든 정보는 2026년 기준이며, 보험사의 정책 변경에 따라 달라질 수 있습니다.</p>
+  </footer>
+
+  
